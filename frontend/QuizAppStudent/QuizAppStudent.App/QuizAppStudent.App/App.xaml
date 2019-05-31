@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizAppStudent.App.App">
+    <Application.Resources>
+        <ResourceDictionary>
+          
+            <Style TargetType="ContentPage" x:Key="PageStyle">
+                <Setter Property="BackgroundColor" Value="#092644" />
+            </Style>
+            <Style TargetType="ListView" x:Key="ListViewStyle">
+                <Setter Property="SeparatorColor" Value="#1C9FC7" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style TargetType="Button" x:Key="ButtonStyle">
+                <Setter Property="BackgroundColor" Value="#1C9FC7" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="CornerRadius" Value="10" />
+            </Style>
+            <Style TargetType="StackLayout" x:Key="StackLayoutListViewStyle">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="WidthRequest" Value="200"/>
+            </Style>
+            <Style TargetType="TextCell" x:Key="ListViewTextCellStyle">
+                <Setter Property="TextColor" Value="#FFFFFF" />
+            </Style>
+            <Style TargetType="StackLayout" x:Key="StackLayoutWrapperStyle">
+                <Setter Property="Margin" Value="50"/>
+                <Setter Property="Orientation" Value="Vertical"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

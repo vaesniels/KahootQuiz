@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:QuizAppStudent.App.Behaviors"
+             xmlns:converters="clr-namespace:QuizAppStudent.App.Convertors"
+             x:Class="QuizAppStudent.App.HomeView"
+             Style="{StaticResource PageStyle}"
+             >
+    <ContentPage.Resources>
+        <converters:ItemSelectedConverter
+x:Key="ItemSelectedConverter"></converters:ItemSelectedConverter>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource StackLayoutWrapperStyle}">
+             <Label Text="Previously Attended Quizzes"
+                   HorizontalTextAlignment="Center"
+                   FontSize="16"
+                   TextColor="White"
+                   FontAttributes="Bold"/>
+
+            <ListView ItemsSource="{Binding Path=StudentQuiz}" Style="{StaticResource ListViewStyle}">
+                <ListView.Behaviors>
+                    <behaviors:EventToCommandBehavior
+                        EventName="ItemSelected" Command="{Binding StudentQuizSelectedcommand}"
+                        Converter="{StaticResource ItemSelectedConverter}" />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                       <TextCell Text="{Binding Path=Rank}"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

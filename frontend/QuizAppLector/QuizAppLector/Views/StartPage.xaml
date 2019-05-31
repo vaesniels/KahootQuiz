@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="QuizAppLector.Views.StartPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QuizAppLector"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{Binding StartPageInstance, Source={StaticResource Locator}}">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/Images/background.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="0" Background="#152737">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="QuizTimeBlock" Grid.Column="0" HorizontalAlignment="Left" FontSize="50" Text="Quiz Time" Margin="20,0,0,0" VerticalAlignment="Center" Foreground="WhiteSmoke"/>
+            <RelativePanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <TextBlock x:Name="AccountQuestionBlock" FontSize="36" Text="Don't have an account yet?" VerticalAlignment="Bottom" Foreground="DimGray" Margin="0,0,0,0" HorizontalAlignment="Right" />
+                <Button x:Name="RegisterButton" Background="#152737" RelativePanel.RightOf="AccountQuestionBlock" HorizontalAlignment="Right" FontSize="50" Content="Register" Margin="20,0" VerticalAlignment="Center" Foreground="WhiteSmoke" Command="{Binding NavigateToRegisterPage}"/>
+            </RelativePanel>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" Width="Auto" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+            <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <TextBlock x:Name="UserNameBlock" HorizontalAlignment="Center" Text="Username: " TextWrapping="Wrap" VerticalAlignment="Top" Height="75" Width="290" FontSize="50" Foreground="White"/>
+                <TextBox x:Name="UserNameBox" RelativePanel.RightOf="UserNameBlock" HorizontalAlignment="Center" Text="" VerticalAlignment="Center" Height="67" Width="522" FontSize="50" Margin="0,0,0,0"/>
+            </RelativePanel>
+            <RelativePanel VerticalAlignment="Top" HorizontalAlignment="Center">
+                <TextBlock x:Name="PasswordBlock" HorizontalAlignment="Center" Text="Password: " TextWrapping="Wrap" VerticalAlignment="Top" Height="75" Width="290" FontSize="50" Foreground="White"/>
+                <PasswordBox x:Name="PasswordBox" RelativePanel.RightOf="PasswordBlock" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" Height="67" Width="522"/>
+            </RelativePanel>
+            <Button x:Name="LoginButton" Content="Login" BorderThickness="5" BorderBrush="#152737" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" Height="80" Width="306" FontSize="40" Foreground="White" Background="#0E3B67" Command="{Binding NavigateToOverviewPage}"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

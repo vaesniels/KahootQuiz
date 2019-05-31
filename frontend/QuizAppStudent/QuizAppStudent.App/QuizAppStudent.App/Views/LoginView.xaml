@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizAppStudent.App.LoginView"
+             Style="{StaticResource PageStyle}">
+
+    <StackLayout Style="{StaticResource StackLayoutWrapperStyle}">
+        <Label Text="{Binding ErrorMessage , Mode=OneWayToSource}"
+               x:Name="ErrorLabel" />
+        <Entry x:Name="UsernameEntry"
+               Placeholder="Username"
+               Text="{Binding Username, Mode=TwoWay}"/>
+        <Entry x:Name="PasswordEntry"
+               Placeholder="Password"
+               Text="{Binding Password, Mode=TwoWay}"/>
+        <Button x:Name="LoginButton"
+                    Text="Login"
+                    Style="{StaticResource ButtonStyle}"
+                    Command="{Binding LoginCommand}" 
+                    Margin="10,10,10,0"/>
+        <Label Text="Don't have an account? Register now."
+               x:Name="NoAccountLabel" />
+    </StackLayout>
+</ContentPage>

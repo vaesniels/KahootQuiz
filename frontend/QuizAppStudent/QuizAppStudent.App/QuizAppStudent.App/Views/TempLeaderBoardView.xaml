@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizAppStudent.App.TempLeaderBoardPage"
+             Style="{StaticResource PageStyle}">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource StackLayoutWrapperStyle}">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Score: " />
+                <Label x:Name="ScoreLabel"
+                       Text="0" />
+            </StackLayout>
+            <ListView x:Name="TempLeaderBoardListView"
+                      Style="{StaticResource ListViewStyle}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Style="{StaticResource StackLayoutListViewStyle}">
+                                    <Label Text="{Binding RankAndName}"/>
+                                    <Label Text="{Binding Score}"
+                                           TextColor="#1C9FC7"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
